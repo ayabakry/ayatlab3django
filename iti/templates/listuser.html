@@ -1,0 +1,33 @@
+{%extends 'index.html'%}
+{%block username%}
+{{request.session.username}}
+{%endblock%}
+
+{%block content%}
+{{ues}}
+<table border="1" width="100%" bgcolor="white">
+    <tr>
+        <td>ID</td>
+        <td>UserName</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Action</td>
+
+    </tr>
+    {%for ues in users%}
+     <tr>
+        <td>{{ues.id}}</td>
+        <td>{{ues.username}}</td>
+        <td>{{ues.email}}</td>
+        <td>{{ues.password}}</td>
+        <td>
+            <a href="{%url 'updateuser' ues.id %}">Update</a>
+            <a href="{%url 'deleteuser' ues.id %}">Delete</a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+
+
+
+{%endblock%}

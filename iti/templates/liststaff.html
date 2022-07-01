@@ -1,0 +1,33 @@
+{%extends 'index.html'%}
+{%block username%}
+{{request.session.username}}
+{%endblock%}
+
+{%block content%}
+{{ues}}
+<table border="2" width="100%" bgcolor="white">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>National Number</td>
+        <td>Trainer</td>
+        <td>Action</td>
+
+    </tr>
+    {%for staffs in staffs%}
+     <tr>
+        <td>{{staffs.id}}</td>
+        <td>{{staffs.name}}</td>
+        <td>{{staffs.nationalnum}}</td>
+        <td>{{staffs.trainer.name}}</td>
+        <td>
+            <a href="{%url 'updateuser' staffs.id %}">Update</a>
+            <a href="{%url 'deleteuser' staffs.id %}">Delete</a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+
+
+
+{%endblock%}

@@ -1,0 +1,15 @@
+{{object_list}}
+<table border="1" width="100%">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+    </tr>
+    {%for trainer in object_list%}
+    <tr>
+        <td>{{trainee.id}}</td>
+        <td>{{trainee.name}}</td>
+
+    </tr>
+    {%endfor%}
+
+</table>

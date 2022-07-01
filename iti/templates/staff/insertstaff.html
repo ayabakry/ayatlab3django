@@ -1,0 +1,21 @@
+{%extends 'index.html'%}
+
+{%block username%}
+{{request.session.username}}
+{%endblock%}
+
+{%block title%}
+
+				<h2>Insert Staff</h2>
+
+{%endblock%}
+ {%block content%}
+
+			<form  method="post">
+				{%csrf_token%}
+				{{forms.as_p}}
+				<input type="submit" value="Insert Staff">
+			</form>
+
+
+{%endblock%}
